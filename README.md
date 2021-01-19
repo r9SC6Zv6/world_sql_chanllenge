@@ -65,7 +65,7 @@ SELECT Name, GNP FROM country ORDER BY GNP DESC LIMIT 10;
 ```
 16. List the names of, and number of languages spoken by, the top ten most multilingual countries.
 ```sql
-
+SELECT DISTINCT Language, COUNT(Language) FROM countrylanguage GROUP BY Language ORDER BY COUNT(Language) DESC LIMIT 10;
 ```
 17. List every country where over 50% of its population can speak German.
 ```sql
@@ -77,9 +77,9 @@ SELECT Name FROM country WHERE LifeExpectancy IS NOT NULL AND LifeExpectancy>0 O
 ```
 19. List the top three most common government forms.
 ```sql
-
+SELECT GovernmentForm FROM country GROUP BY GovernmentForm ORDER BY COUNT(GovernmnetForm) DESC LIMIT 3;
 ```
 20. How many countries have gained independence since records began?
 ```sql
-
+SELECT COUNT(IndepYear) FROM country WHERE IndepYear IS NOT NULL;
 ```
