@@ -53,15 +53,15 @@ SELECT Name, Code FROM country WHERE HeadOfState = 'Elizabeth II';
 ```
 13. List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
 ```sql
-
+SELECT Name FROM country WHERE (Population/SurfaceArea) IS NOT NULL ORDER BY (Population/SurfaceArea) ASC LIMIT 10;
 ```
 14. List every unique world language.
 ```sql
-
+SELECT DISTINCT Language FROM countrylanguage;
 ```
 15. List the names and GNP of the world's top 10 richest countries.
 ```sql
-
+SELECT Name, GNP FROM country ORDER BY GNP DESC LIMIT 10;
 ```
 16. List the names of, and number of languages spoken by, the top ten most multilingual countries.
 ```sql
