@@ -69,11 +69,11 @@ SELECT Name, GNP FROM country ORDER BY GNP DESC LIMIT 10;
 ```
 17. List every country where over 50% of its population can speak German.
 ```sql
-
+SELECT country.Name FROM country JOIN countrylanguage ON country.Code=countrylanguage.CountryCode WHERE Language='German' AND Percentage>50.0;
 ```
 18. Which country has the worst life expectancy? Discard zero or null values.
 ```sql
-
+SELECT Name FROM country WHERE LifeExpectancy IS NOT NULL AND LifeExpectancy>0 ORDER BY LifeExpectancy ASC LIMIT 1;
 ```
 19. List the top three most common government forms.
 ```sql
